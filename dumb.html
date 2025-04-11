@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BENZ Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+  <!-- Navigation Bar -->
+  <nav class="bg-red-500 text-white flex justify-between items-center px-6 py-4">
+    <div class="text-xl font-bold">BENZ Recipes</div>
+    <ul class="flex space-x-6">
+      <li><a href="#" class="hover:underline">Home</a></li>
+      <li><a href="#recipes" class="hover:underline">Recipes</a></li>
+      <li><a href="#contact" class="hover:underline">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-[70vh] flex flex-col justify-center items-center text-center text-white px-4" style="background-image: url(gettyimages-1273516682.jpg);">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to BENZ Recipes</h1>
+    <button class="bg-white text-red-500 px-6 py-2 rounded hover:bg-red-100 transition">Explore Recipes</button>
+  </section>
+
+  <!-- Recipe Listing -->
+  <section id="recipes" class="p-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:scale-105 cursor-pointer" onclick="showModal('Filipino Style Spaghetti')">
+      <img src="k_Photo_Recipes_2024-09-Filipino-spaghetti_Filipino-spaghetti-179.jpg" alt="Spaghetti" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-lg font-semibold mb-2">Filipino Style Spaghetti</h3>
+        <p>A Traditional Filipino Spaghetti.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:scale-105 cursor-pointer" onclick="showModal('Chicken Curry')">
+      <img src="chicken-curry-recipe.jpg" alt="Chicken Curry" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-lg font-semibold mb-2">Chicken Curry</h3>
+        <p>Spicy and flavorful chicken simmered in curry sauce.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition transform hover:scale-105 cursor-pointer" onclick="showModal('Tinola ')">
+      <img src="IMG_6656-scaled.jpg" alt="Salad" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-lg font-semibold mb-2">Tinola</h3>
+        <p>Tinola is a traditional Filipino chicken soup made with ginger, garlic, green papaya or chayote, and leafy greens, simmered in a savory broth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="recipeModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-11/12 max-w-xl relative">
+      <button class="absolute top-2 right-4 text-xl" onclick="closeModal()">&times;</button>
+      <h2 id="modalTitle" class="text-2xl font-bold mb-4">Recipe Title</h2>
+      <p>More recipe details coming soon!</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-red-500 text-white text-center p-6 mt-10">
+    <p>Contact us at info@BENZrecipes.com</p>
+    <p class="mt-2">
+      Follow us:
+      <a href="#" class="hover:underline mx-1">Facebook</a>|
+      <a href="#" class="hover:underline mx-1">Instagram</a>|
+      <a href="#" class="hover:underline mx-1">Twitter</a>
+    </p>
+    <p class="mt-2">&copy; 2025 BENZ Recipes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showModal(recipeName) {
+      document.getElementById('modalTitle').textContent = recipeName;
+      document.getElementById('recipeModal').classList.remove('hidden');
+      document.getElementById('recipeModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('recipeModal').classList.remove('flex');
+      document.getElementById('recipeModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
